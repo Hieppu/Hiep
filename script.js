@@ -78,14 +78,14 @@ const deletePost = (id) => {
 
 const renderRow = (data) => `
 <div id=${data.id} class="row">
-<span class="fw-bold col">${data.title}</span>
-<p class="col text-center">${data.desc}</p>
-<span class="small text-secondary col text-center">${data.date}</span>
-<p class="col text-center">${data.priority}</p>
-<span class="options col d-flex justify-content-end">
-<i onClick= "editPost('${data.id}')" data-bs-toggle="modal" data-bs-target="#update" class="fas fa-edit"></i>
-<i onClick ="deletePost('${data.id}');createPosts()" data-bs-toggle="modal" data-bs-target="#deleteModal" class="fas fa-trash-alt mx-2"></i>
-</span>
+  <span class="fw-bold col">${data.title}</span>
+    <p class="col text-center">${data.desc}</p>
+      <span class="small text-secondary col text-center">${data.date}</span>
+    <p class="col text-center">${data.priority}</p>
+    <span class="options col d-flex justify-content-end">
+    <i onClick= "editPost('${data.id}')" data-bs-toggle="modal" data-bs-target="#update" class="fas fa-edit"></i>
+    <i onClick ="deletePost('${data.id}');createPosts()" data-bs-toggle="modal" data-bs-target="#deleteModal" class="fas fa-trash-alt mx-2"></i>
+  </span>
 </div>
 `;
 
