@@ -1,0 +1,450 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f2f2f2;
+}
+
+#msg {
+    color: red;
+}
+
+#msg2 {
+    color: green;
+}
+
+.overall {
+    display: flex;
+    /* flex-direction: column; */
+    background-color: rgb(152, 193, 217);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+    align-items: flex-start;
+    padding: 16px 16px;
+}
+
+#header {
+    background-color: rgb(255, 255, 255);
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: rgb(0, 0, 0 / 20%) 1px 2px 4px;
+
+}
+
+h2.font {
+    margin: 0px;
+    font-size: 2em;
+    text-align: center;
+    color: rgb(74, 74, 74);
+    padding: 0.8rem 0px;
+}
+
+.tieude {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+.title {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    color: rgb(74, 74, 74);
+}
+
+.tieude input {
+    border: 1px solid rgb(244, 67, 54);
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.tieude1 input {
+    border: 1px solid rgb(244, 67, 54);
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.des {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    color: rgb(74, 74, 74);
+}
+
+/* .space textarea {
+    border: 1px solid rgb(244, 67, 54);
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+} */
+.spacedes1 {
+    width: 100%;
+    height: 69px;
+}
+
+.duedate {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    color: rgb(74, 74, 74);
+}
+
+.ngaysinh {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+.dateandpriority>div {
+    flex: 1 1 0%;
+}
+
+.dateandpriority {
+    display: flex;
+    gap: 1em;
+    margin-top: 9px;
+}
+
+.soluong {
+    /* display: inline-block; */
+    font-size: 0rem;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    color: rgb(74, 74, 74);
+}
+
+.pri {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    color: rgb(74, 74, 74);
+}
+
+.lower select {
+    border: 1px solid rgb(221, 221, 221);
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.spacedate {
+    border: 1px solid rgb(244, 67, 54);
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.aboutprioty {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+.add button {
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 1em;
+    background: rgb(0, 101, 161);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 0.3em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.phantodo {
+    flex: 2 1 0%;
+}
+
+.phantodo {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: flex-start;
+    padding: 16px 16px;
+    margin: 0px 15px 15px 15px;
+    border-radius: 10px;
+}
+
+.todolist h2 {
+    margin: 0px;
+    font-size: 1.5rem;
+    color: rgb(0, 101, 161);
+    font-weight: 700;
+    padding: 0px 0.5em;
+    font-family: "Open Sans", sans-serif;
+}
+
+.todolist {
+
+    flex-direction: row;
+    margin: 10px 0px 25px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.searching {
+    position: relative;
+}
+
+.searching input {
+    min-width: 220px;
+    border: 1px solid rgb(0, 101, 161);
+    border-radius: 5px;
+    padding: 0px 10px;
+    height: 30px;
+}
+
+.searching button {
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 0px;
+    top: -5px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.search i {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+.space {
+    height: calc(100vh - 235px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    border: 1px solid rgb(241, 241, 241);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.action {
+    padding: 0px 1em;
+    margin: 10px 0px;
+    margin-bottom: 16px;
+    flex-direction: row;
+    height: 80px;
+    align-items: center;
+    display: flex;
+    border-radius: 8px;
+    background: rgb(241, 241, 241);
+    justify-content: space-between;
+    color: rgb(74, 74, 74);
+}
+
+.action span {
+    font-family: "Open Sans", sans-serif;
+    align-items: center;
+}
+
+.done {
+    border: 1px solid rgb(221, 221, 221);
+    background: rgb(0, 101, 161);
+    color: rgb(255, 255, 255);
+    padding: 0.5em 1.5em;
+    margin-left: 0.3em;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    transition: all 0.3s ease 0s;
+}
+
+.remove {
+    border: 1px solid rgb(0, 101, 161);
+    background: rgb(255, 255, 255);
+    color: rgb(0, 101, 161);
+    padding: 0.5em 1.5em;
+    margin-left: 0.3em;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    transition: all 0.3s ease 0s;
+
+}
+
+.action .done:hover {
+    color: white;
+    background-color: rgb(74, 74, 74);
+}
+
+.action .remove:hover {
+    color: white;
+    background-color: rgba(10, 107, 165, 0.933);
+}
+
+.btn1 {
+    margin-left: 620px;
+    display: flex;
+    gap: 1em;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+table.list {
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.content {
+    margin-bottom: 1em;
+    border: 1px solid transparent;
+}
+
+#posts {
+    width: 100%;
+}
+
+#posts div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.toast {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    border-radius: 6px;
+    background: #fff;
+    padding: 20px 35px 20px 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-left: 8px solid #40f467;
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.toast.active {
+    transform: translateX(0%);
+}
+
+.toast .toast-content {
+    display: flex;
+    align-items: center;
+}
+
+.toast-content .check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    background-color: #40f467;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.toast-content .message {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.message .text{
+    font-size: 20px;
+    font-weight: 400;
+    color: #666666;
+}
+
+.message .text.text-1{
+    font-weight: 600;
+    color: #333;
+}
+
+.toast .close{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.toast .close:hover{
+    opacity: 1;
+}
+
+.toast .progress{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #ddd;
+}
+
+.toast .progress::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #40f467;
+}
+
+.progress.active::before{
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100%{
+        right: 100%;
+    }
+}
