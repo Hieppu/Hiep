@@ -119,23 +119,24 @@ const closeIcon = document.querySelector(".close");
 const progress = document.querySelector(".progress");
 
       btn.addEventListener("click", () => {
-        toast.classList.add("active");
-        progress.classList.add("active");
+        $('.toast').toast('show')
+        toast.classList.add("show");
+        progress.classList.add("show");
         
         setTimeout(() => {
-          toast.classList.remove("active");
+          toast.classList.remove("show");
         }, 5000);
 
         setTimeout(() => {
-          progress.classList.add("active");
+          progress.classList.add("show");
         }, 5300);
       })
 
       closeIcon.addEventListener("click", () => {
-        toast.classList.remove("active");
+        toast.classList.remove("show");
         
         setTimeout(() => {
-          progress.classList.add("active");
+          progress.classList.add("show");
         }, 300);
       });
 
@@ -148,22 +149,23 @@ function KiemtraForm(){
   var tittle = document.getElementById("textInput").value
   var des = document.getElementById("textarea").value
   var date = document.getElementById("dateInput").value
+  var errorTitle = document.getElementById("err_title")
+  var errorDes = document.getElementById("err_des")
+  var errorDate = document.getElementById("err_date")
+
+  errorTitle.innerText = errorDes.innerText = errorDate.innerText = ''
 
   if(tittle == ""){
-    alert("Chưa nhập tiêu đề")
-    return false
+    errorTitle.innerText = "Chưa nhập tiêu đề"
   }
   if(des == ""){
-    alert("chưa nhập mô tả")
-    return false
+    errorDes.innerText = "Chưa nhập mô tả"
   }
   if(date == ""){
-    alert("chưa chọn ngày sinh")
-    return false
+    errorDate.innerText = "Chưa chọn ngày sinh"
   }
   return true
 }
-
 // function validation(){
 //   var titler = document.getElementById('textInput').value;
   
@@ -172,4 +174,3 @@ function KiemtraForm(){
 //     return false;
 //   }
 // }
-
