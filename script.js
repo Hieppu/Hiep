@@ -12,19 +12,22 @@ document.getElementById("add").addEventListener("click", (e) => {
   const priority = document.getElementById("priority").value;
   const tempData = { id, title, desc, date, priority };
   // msg.innerHTML = "*Yêu cầu nhập thông tin";
+  
   if (isValid(tempData)) {
     data.push(tempData);
-    
+
     showData();
     msg.innerHTML = "Thêm thành công";
     localStorage.setItem("data", JSON.stringify(data));
   }
+  document.getElementById("myform").reset();
+  
 });
 
 //update item
 document.getElementById("updateBtn").addEventListener("click", (e) => {
   e.preventDefault();
-  
+
   if (selectedPostId) {
     const tempPost = data.find((item) => item.id === selectedPostId);
     if (tempPost) {
@@ -78,6 +81,7 @@ const deletePost = (id) => {
 
 const renderRow = (data) => `
 <div id=${data.id} class="row">
+  <input type="checkbox" id="checkboxid" class="checkbox" value="${data.id}">
   <span class="fw-bold col">${data.title}</span>
     <p class="col text-center">${data.desc}</p>
       <span class="small text-secondary col text-center">${data.date}</span>
@@ -118,34 +122,58 @@ const toast = document.querySelector(".toast");
 const closeIcon = document.querySelector(".close");
 const progress = document.querySelector(".progress");
 
-      btn.addEventListener("click", () => {
-        $('.toast').toast('show')
-        toast.classList.add("show");
-        progress.classList.add("show");
-        
-        setTimeout(() => {
-          toast.classList.remove("show");
-        }, 5000);
+btn.addEventListener("click", () => {
+  $('.toast').toast('show')
+  toast.classList.add("show");
+  progress.classList.add("show");
 
-        setTimeout(() => {
-          progress.classList.add("show");
-        }, 5300);
-      })
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 5000);
 
-      closeIcon.addEventListener("click", () => {
-        toast.classList.remove("show");
-        
-        setTimeout(() => {
-          progress.classList.add("show");
-        }, 300);
-      });
+  setTimeout(() => {
+    progress.classList.add("show");
+  }, 5300);
+})
+
+closeIcon.addEventListener("click", () => {
+  toast.classList.remove("show");
+
+  setTimeout(() => {
+    progress.classList.add("show");
+  }, 300);
+});
+
+const btnremove = document.querySelector(".remove");
+const toastremove = document.querySelector(".toast-remove");
+const closeIconremove = document.querySelector(".close");
+const progressremove = document.querySelector(".progress-remove");
+
+btnremove.addEventListener("click", () => {
+  $('.toast-remove').toast('show')
+  toastremove.classList.add("show");
+  progress.classList.add("show");
+
+  setTimeout(() => {
+    toastremove.classList.remove("show");
+  }, 5100);
+
+  setTimeout(() => {
+    progressremove.classList.add("show");
+  }, 5400);
+})
+
+closeIconremove.addEventListener("click", () => {
+  toastremove.classList.remove("show");
+
+  setTimeout(() => {
+    progressremove.classList.add("show");
+  }, 400);
+});
 
 
-const searchFun = () => {
-  let filter = document.getElementById('searchItem').value;
-}
 
-function KiemtraForm(){
+function KiemtraForm() {
   var tittle = document.getElementById("textInput").value
   var des = document.getElementById("textarea").value
   var date = document.getElementById("dateInput").value
@@ -155,22 +183,64 @@ function KiemtraForm(){
 
   errorTitle.innerText = errorDes.innerText = errorDate.innerText = ''
 
-  if(tittle == ""){
-    errorTitle.innerText = "Chưa nhập tiêu đề"
+  if (tittle == "") {
+    errorTitle.innerText = "*Chưa nhập tiêu đề"
   }
-  if(des == ""){
-    errorDes.innerText = "Chưa nhập mô tả"
+  if (des == "") {
+    errorDes.innerText = "*Chưa nhập mô tả"
   }
-  if(date == ""){
-    errorDate.innerText = "Chưa chọn ngày sinh"
+  if (date == "") {
+    errorDate.innerText = "*Chưa chọn ngày sinh"
   }
   return true
-}
-// function validation(){
-//   var titler = document.getElementById('textInput').value;
   
-//   if(titler == ""){
-//     document.getElementById('username').innerHTML = "Please fill the title field";
-//     return false;
+}
+
+var search_input = document.querySelector("#searchItem")
+search_input.addEventListener("keyup", function (e) {
+  var search_item = e.target.value.toLowerCase();
+  var span_items = document.querySelectorAll(".container")
+
+  span_items.forEach(function (item) {
+    if (item.textContent.toLocaleLowerCase().indexOf(search_item) != -1) {
+      item.closest(".container").style.display = "block";
+      console.log(item)
+    }
+    else {
+      item.closest(".container").style.display = "none";
+    }
+  })
+})
+
+// function myFunction() {
+//   var boxes = document.getElementsByClassName('col');
+//   for(var i=0;i<boxes.length;i++){
+//     boxes = boxes[i];
+//     if(box.checked){
+//       box.parentNode.removeChild(box);
+//     }
 //   }
+// }
+
+function myFunction(){
+  const removeid = document.querySelectorAll(".checkbox:checked")
+  removeid.forEach(item=>{
+    const tempIndex = data.indexOf(data.find((item) => item.id === item.value));
+    data.splice(tempIndex,1);
+    
+  });
+  localStorage.setItem("data", JSON.stringify(data));
+  refreshData();
+}
+
+
+// function bluckRemove() {
+//   task_checkbox = document.querySelectorAll(".task_checkbox:checked")
+//   task_checkbox.forEach(element => {
+//       const tempIndex = data.indexOf(data.find((item) => item.id === element.value));
+//       console.log(tempIndex);
+//       data.splice(tempIndex, 1);
+//   });
+//   localStorage.setItem("data", JSON.stringify(data));
+//   refreshData();
 // }
