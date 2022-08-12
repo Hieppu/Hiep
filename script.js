@@ -16,7 +16,7 @@ document.getElementById("add").addEventListener("click", (e) => {
   if (isValid(tempData)) {
     data.push(tempData);
 
-    showData();
+    showData(data);
     msg.innerHTML = "Thêm thành công";
     localStorage.setItem("data", JSON.stringify(data));
   }
@@ -93,7 +93,7 @@ const renderRow = (data) => `
 </div>
 `;
 
-const showData = () => {
+const showData = (data) => {
   const posts = document.getElementById("posts");
   posts.innerHTML = "";
   data.map((item) => {
@@ -111,7 +111,7 @@ const refreshData = () => {
         : [];
     })
     .then(() => {
-      showData();
+      showData(data);
     });
 };
 
@@ -193,23 +193,13 @@ function KiemtraForm() {
     errorDate.innerText = "*Chưa chọn ngày sinh"
   }
   return true
-  
 }
 
 var search_input = document.querySelector("#searchItem")
 search_input.addEventListener("keyup", function (e) {
   var search_item = e.target.value.toLowerCase();
-  var span_items = document.querySelectorAll(".container")
-
-  span_items.forEach(function (item) {
-    if (item.textContent.toLocaleLowerCase().indexOf(search_item) != -1) {
-      item.closest(".container").style.display = "block";
-      console.log(item)
-    }
-    else {
-      item.closest(".container").style.display = "none";
-    }
-  })
+  const dataToRender = data.filter((e) => e.title.includes(search_item)) 
+  showData(dataToRender)
 })
 
 // function myFunction() {

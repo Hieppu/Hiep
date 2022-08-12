@@ -57,7 +57,7 @@ h2.font {
 
 .title {
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 0.6em;
     color: rgb(74, 74, 74);
@@ -89,13 +89,13 @@ h2.font {
 
 .des {
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 0.6em;
-    color: rgb(8, 8, 8);
+    color: rgb(74, 74, 74);
 }
 
-.space textarea {
+.spacedes textarea {
     border: 1px solid rgb(221, 221, 221);
     box-sizing: border-box;
     width: 100%;
@@ -112,7 +112,7 @@ h2.font {
 
 .duedate {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 0.6em;
     color: rgb(74, 74, 74);
@@ -144,10 +144,11 @@ h2.font {
 
 .pri {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 0.6em;
     color: rgb(74, 74, 74);
+    font-family: "Open Sans", sans-serif ;
 }
 
 .lower select {
@@ -475,6 +476,7 @@ table {
 #err_des,
 #err_date{
     color: red;
+    font-size: 13px;
 }
 
 .toast .close,
